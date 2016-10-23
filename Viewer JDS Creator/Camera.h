@@ -50,7 +50,7 @@ public:
 		this->Front= front;
 		this->WorldUp = up;
 		this->updateCameraVectors(); 
-		this->MovementSpeed = 1.0f;
+		this->MovementSpeed = 0.1f;
 		this->Zoom = 2.0f;
 		this->RotationX = 0.0f;
 	}

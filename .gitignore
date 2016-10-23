@@ -4,3 +4,7 @@
 *.tlog
 *.pdb
 *.opendb
+*.exe
+*.ilk
+*.obj
+*.idb
