@@ -5,6 +5,8 @@
 #include "LoadFile.h"
 #include "Camera.h"
 #include "Shader.h"
+#include "opengl_3.h"
+#include "Game.h"
 
 class OpenGLContext;
 
@@ -13,12 +15,15 @@ public:
 	Viewer() {
 		bViewSelectionZone = false;
 	};
+
+	void SetGame(Game* pGame);
 	void InitScene(OpenGLContext& gl);
 	void RenderScene(OpenGLContext& gl, Camera& camera, int windowHeight, int windowWidth);
 	void drawColorScene(OpenGLContext& gl);
 	void drawScene3d(OpenGLContext& gl);
 	void getSelection();
 	void drawPlateau();
+	void drawJoueurs();
 
 	int xMousePick;
 	int yMousePick;
@@ -26,13 +31,13 @@ public:
 	bool bViewSelectionZone;
 
 private:
-	std::vector<Zone> Zones;
+	Game* pGame;
+
 	Shader *shader;
 	Shader *shaderColored;
 	Shader *shaderTextured;
 
 	int tPlateau;
-
 
 	glm::mat4 projectionMatrix; // Matrice de projection
 	glm::mat4 viewMatrix; // Matrice de vue
@@ -41,10 +46,10 @@ private:
 	unsigned int vaoPlateau;
 	unsigned int vboPlateau[2];
 
-	unsigned int vaoZone;
-	unsigned int vboZone[2];
-
 	unsigned int vaoRect;
 	unsigned int vboRect;
+
+	unsigned int vaoRect3d;
+	unsigned int vboRect3d;
 	
 };

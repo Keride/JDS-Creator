@@ -2,9 +2,9 @@
 #include "Zone.h"
 
 class Joueur {
-	Joueur(Zone* pzoneDepart) {
-		this->plocation = pzoneDepart;
-	};
+public:
+	Joueur(Zone* pzoneDepart);
+	glm::vec3 getTranslation() const;
 
 private: 
 	Zone* plocation;

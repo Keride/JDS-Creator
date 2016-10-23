@@ -163,6 +163,45 @@ void OpenGLContext::createConvexPolygon(float* trueVertices, int verticesCount, 
 	glBindVertexArray(0); // Désactiver le VBO
 }
 
+void OpenGLContext::createUniqueQuad3d(unsigned int& vao, unsigned int& vbo) {
+	float vertices[] = { 0.0, 0.0, 0.0,
+		1.0, 0.0, 0.0,
+		1.0, 0.0, 1.0,
+		0.0, 0.0, 1.0,
+		0.0, 1.0, 0.0,
+		1.0, 1.0, 0.0,
+		1.0, 1.0, 1.0,
+		0.0, 1.0, 1.0 };
+
+	GLuint elements[] = {
+		0, 1, 2,    2, 3, 0,
+		0, 1, 5,    0, 5, 4,
+		1, 2, 6,	1, 6, 5,
+		2, 3, 7,	2, 7, 6,
+		3, 0, 4,	3, 4, 7,
+		4, 5, 6,    6, 7, 4
+	};
+
+
+
+	glGenVertexArrays(1, &vao); // Créer le VAO
+	glBindVertexArray(vao); // Lier le VAO pour l'utiliser
+
+	glGenBuffers(1, &vbo);
+
+	GLuint elementbuffer;
+	glGenBuffers(1, &elementbuffer);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(elements), &elements[0], GL_STATIC_DRAW);
+
+	glBindBuffer(GL_ARRAY_BUFFER, vbo); // Lier le VBO
+	glBufferData(GL_ARRAY_BUFFER, 108 * sizeof(GLfloat), vertices, GL_STATIC_DRAW); // Définir la taille, les données et le type du VBO
+	glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, GL_FALSE, 0, 0); // Définir le pointeur d'attributs des sommets
+	glEnableVertexAttribArray(0); // Désactiver le VAO	
+
+
+	glBindVertexArray(0); // Désactiver le VBO
+}
 void OpenGLContext::createUniqueQuad(unsigned int& vao, unsigned int& vbo) {
 	float vertices[] = { 0.0, 0.0, 0.0,   
 						 1.0, 0.0, 0.0,

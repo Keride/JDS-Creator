@@ -36,6 +36,7 @@ public:
 	void createConvexPolygon(float* vertices, int verticesCount, float* couleur, unsigned int& vao, unsigned int* vbo);
 
 	void createUniqueQuad(unsigned int& vao, unsigned int& vbo);
+	void createUniqueQuad3d(unsigned int& vao, unsigned int& vbo);
 
 	void createSquare(void); // Méthode pour créer les VAO du carré
 	void createTexturedSquare(void); // Méthode pour créer les VAO du carré
