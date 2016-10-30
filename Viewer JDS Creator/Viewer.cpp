@@ -3,11 +3,15 @@
 void Viewer::SetGame(Game* pGame) {
 	this->pGame = pGame;
 }
+void Viewer::setFrame(int nbframes) {
+	this->frame = nbframes;
+}
 void Viewer::InitScene(OpenGLContext& gl) {
 	Viewer& m = *this;
 	m.shader = new Shader("shader.vert", "shader.frag"); // On crée le shader en chargeant les shaders de type vertex et fragment.
 	m.shaderTextured = new Shader("shaderTextured.vert", "shaderTextured.frag"); // On crée le shader en chargeant les shaders de type vertex et fragment.
 	m.shaderColored = new Shader("SimpleShader.vert", "SimpleShader.frag"); // On crée le shader en chargeant les shaders de type vertex et fragment.
+	m.shaderText = new Shader("TextShader.vert", "TextShader.frag"); // On crée le shader en chargeant les shaders de type vertex et fragment.
 	
 	m.tPlateau = loadPNGTexture("./Assets/Monopoly/Monopoly.png", NULL, NULL);
 
@@ -49,7 +53,6 @@ void Viewer::drawColorScene(OpenGLContext& gl) {
 
 	glUniformMatrix4fv(projectionMatrixLocation, 1, GL_FALSE, &projectionMatrix[0][0]);
 	glUniformMatrix4fv(viewMatrixLocation, 1, GL_FALSE, &viewMatrix[0][0]);
-
 	const std::vector<Zone>& zones = pGame->getZones();
 	for (int i = 0; i < zones.size(); i++) {
 		const Zone& zone = zones[i];
@@ -127,6 +130,13 @@ void Viewer::RenderScene(OpenGLContext& gl, Camera& camera, int windowHeight, in
 
 	drawScene3d(gl);
 
+	float color[4] = { 0.5, 0.8f, 0.2f, 1.0f };
 
+	//printf("%f ms/frame\n", 1000.0 / double(nbFrames));
+
+	char buffer[32];
+	snprintf(buffer, sizeof(buffer), "%g ms", (1000.0 / double(this->frame)));
+
+	gl.RenderText(*m.shaderText, buffer, 700.0f, 550.0f, 0.3f, color);
 
 }

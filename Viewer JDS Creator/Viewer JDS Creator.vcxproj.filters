@@ -13,72 +13,84 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Viewer">
+      <UniqueIdentifier>{8d970caf-a4fe-419a-9ea1-9a9f80219b78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Viewer">
+      <UniqueIdentifier>{1d901bb4-6e98-4474-9c4d-c30ffd5f3db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Game">
+      <UniqueIdentifier>{fce813dd-2b34-4ed9-94d4-b98dd20a7cce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Game">
+      <UniqueIdentifier>{16cc5ff0-a6da-422b-82f5-bf1b9df3e122}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="opengl_3.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="LoadFile.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Joueur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Zone.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Viewer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Objet.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
     </ClInclude>
     <ClInclude Include="Couleur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="opengl_3.h">
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewer.h">
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Zone.h">
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Joueur.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Objet.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="opengl_3.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="LoadFile.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Joueur.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Couleur.cpp">
+      <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="Zone.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="Viewer.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Fichiers sources\Viewer</Filter>
+    </ClCompile>
+    <ClCompile Include="opengl_3.cpp">
+      <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Joueur.cpp">
+      <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
     <ClCompile Include="Objet.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Couleur.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,5 +100,7 @@
     <None Include="shaderTextured.vert" />
     <None Include="SimpleShader.frag" />
     <None Include="SimpleShader.vert" />
+    <None Include="TextShader.frag" />
+    <None Include="TextShader.vert" />
   </ItemGroup>
 </Project>

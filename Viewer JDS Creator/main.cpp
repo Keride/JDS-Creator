@@ -82,8 +82,13 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	g.init(2);
 	v.SetGame(&g);
 	createWindow(wcstring, 500, 500); // On crée la fenêtre OpenGL
-	openglContext.setupScene(v); // On prépare la scène OpenGL
-	
+	openglContext.setupScene(); // On prépare la scène OpenGL
+
+	v.InitScene(openglContext);
+
+	clock_t beginFrame = clock();
+	int nbFrames = 0;
+
 	while (running)
 	{
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) { // S'il y a un message à gérer, on s'en occupe
@@ -96,6 +101,16 @@ int WINAPI WinMain(HINSTANCE hInstance,
 			}
 		}
 		openglContext.renderScene(camera,v); // On affiche la scène (qui s'occupe aussi d'échanger les tampons)
+		clock_t endFrame = clock(); 
+		nbFrames++;
+		if (endFrame - beginFrame >= CLOCKS_PER_SEC) { // If last prinf() was more than 1 sec ago
+											 // printf and reset timer
+			//printf("%f ms/frame\n", 1000.0 / double(nbFrames));
+			v.setFrame(nbFrames);
+			nbFrames = 0;
+			beginFrame += CLOCKS_PER_SEC;
+		}
+
 	}
 	return (int)msg.wParam;
 }

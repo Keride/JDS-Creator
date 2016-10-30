@@ -17,6 +17,7 @@ public:
 	};
 
 	void SetGame(Game* pGame);
+	void setFrame(int nbframes);
 	void InitScene(OpenGLContext& gl);
 	void RenderScene(OpenGLContext& gl, Camera& camera, int windowHeight, int windowWidth);
 	void drawColorScene(OpenGLContext& gl);
@@ -35,9 +36,11 @@ private:
 
 	Shader *shader;
 	Shader *shaderColored;
-	Shader *shaderTextured;
+	Shader *shaderTextured; 
+	Shader *shaderText;
 
 	int tPlateau;
+	int frame;
 
 	glm::mat4 projectionMatrix; // Matrice de projection
 	glm::mat4 viewMatrix; // Matrice de vue
