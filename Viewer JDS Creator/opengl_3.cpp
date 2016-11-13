@@ -281,11 +281,47 @@ void OpenGLContext::createUniqueQuad3d(unsigned int& vao, unsigned int& vbo) {
 
 	glBindVertexArray(0); // Désactiver le VBO
 }
+void OpenGLContext::createUniqueQuadTextured(unsigned int& vao, unsigned int* vbo) {
+	float vertices[] = { 0.0, 0.0, 0.0,
+		1.0, 0.0, 0.0,
+		1.0, 1.0, 0.0,
+		0.0, 1.0, 0.0 };
+	GLuint elements[] = {
+		0, 1, 2,
+		2, 3, 0
+	};
+	float UV[] = { 0.0, 1.0 - 0.0,   
+				   1.0, 1.0 - 0.0,  
+				   1.0, 1.0 - 1.0,
+				   0.0, 1.0 - 1.0 };
+
+	glGenVertexArrays(1, &vao); // Créer le VAO
+	glBindVertexArray(vao); // Lier le VAO pour l'utiliser
+
+	glGenBuffers(2, &vbo[0]);
+
+	GLuint elementbuffer;
+	glGenBuffers(1, &elementbuffer);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(elements), &elements[0], GL_STATIC_DRAW);
+
+	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]); // Lier le VBO
+	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), vertices, GL_STATIC_DRAW); // Définir la taille, les données et le type du VBO
+	glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, GL_FALSE, 0, 0); // Définir le pointeur d'attributs des sommets
+	glEnableVertexAttribArray(0); // Désactiver le VAO	
+
+	glBindBuffer(GL_ARRAY_BUFFER, vbo[1]); // Lier le deuxième VBO
+	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), UV, GL_STATIC_DRAW); // Définir la taille et les données du VBO et le définir à STATIC_DRAW  
+	glVertexAttribPointer((GLuint)1, 2, GL_FLOAT, GL_FALSE, 0, 0); // Définir le pointeur d'attributs des arêtes
+	glEnableVertexAttribArray(1); // Activer le deuxième tableau d'attributs des arêtes
+
+	glBindVertexArray(0); // Désactiver le VBO
+}
 void OpenGLContext::createUniqueQuad(unsigned int& vao, unsigned int& vbo) {
 	float vertices[] = { 0.0, 0.0, 0.0,   
 						 1.0, 0.0, 0.0,
-						 1.0, 0.0, 1.0,
-						 0.0, 0.0, 1.0};
+						 1.0, 1.0, 1.0,
+						 0.0, 1.0, 1.0};
 
 	GLuint elements[] = {
 		0, 1, 2,

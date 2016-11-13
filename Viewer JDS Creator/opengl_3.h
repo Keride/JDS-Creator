@@ -49,6 +49,7 @@ public:
 
 	void RenderText(Shader & shader, std::string text, GLfloat x, GLfloat y, GLfloat scale, float * color);
 	void createUniqueQuad(unsigned int& vao, unsigned int& vbo);
+	void createUniqueQuadTextured(unsigned int& vao, unsigned int* vbo);
 	void createUniqueQuad3d(unsigned int& vao, unsigned int& vbo);
 	void createTexturedRectangle(unsigned int& rectangleTexturedVAO, unsigned int* rectangleTextureVBO);
 

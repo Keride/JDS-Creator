@@ -78,8 +78,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	wchar_t wcstring[newsize];
 	mbstowcs_s(&convertedChars, wcstring, origsize, orig, _TRUNCATE);
 
-	Game g;
+	GameMonopoly g;
 	g.init(2);
+	g.initGame();
 	v.SetGame(&g);
 	createWindow(wcstring, 500, 500); // On crée la fenêtre OpenGL
 	openglContext.setupScene(); // On prépare la scène OpenGL

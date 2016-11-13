@@ -25,6 +25,12 @@
     <Filter Include="Fichiers d%27en-tête\Game">
       <UniqueIdentifier>{16cc5ff0-a6da-422b-82f5-bf1b9df3e122}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Monopoly">
+      <UniqueIdentifier>{89a7ac3f-c2ec-4eff-91ba-69ece1d131ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Monopoly">
+      <UniqueIdentifier>{ed471b48-02f4-49ca-8491-66d62e35c377}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -60,6 +66,21 @@
     <ClInclude Include="Objet.h">
       <Filter>Fichiers d%27en-tête\Game</Filter>
     </ClInclude>
+    <ClInclude Include="Ressource.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionMonopoly.h">
+      <Filter>Fichiers d%27en-tête\Monopoly</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMonopoly.h">
+      <Filter>Fichiers d%27en-tête\Monopoly</Filter>
+    </ClInclude>
+    <ClInclude Include="Bouton.h">
+      <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,6 +112,21 @@
     </ClCompile>
     <ClCompile Include="Objet.cpp">
       <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Ressource.cpp">
+      <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionMonopoly.cpp">
+      <Filter>Fichiers sources\Monopoly</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMonopoly.cpp">
+      <Filter>Fichiers sources\Monopoly</Filter>
+    </ClCompile>
+    <ClCompile Include="Bouton.cpp">
+      <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

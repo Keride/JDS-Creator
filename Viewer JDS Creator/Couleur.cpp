@@ -23,6 +23,7 @@ static std::string indexcolors[] = {
 Couleur::Couleur(float r, float g, float b, float a) {
 	this->Set(r, g, b, a);
 };
+
 void Couleur::Set(float r, float g, float b, float a) {
 	this->r = r;
 	this->g = g;
@@ -63,3 +64,35 @@ float* Couleur::Get() const {
 	float color[] = { this->r / 255, this->g / 255, this->b / 255, this->a };
 	return color;
 }
+
+bool operator<(Couleur const &a, Couleur const& b) {
+	float* c1 = a.Get();
+
+	float r1 = c1[0];
+	float g1 = c1[1];
+	float b1 = c1[2];
+	float a1 = c1[3];
+	float* c2 = b.Get();
+	float r2 = c2[0];
+	float g2 = c2[1];
+	float b2 = c2[2];
+	float a2 = c2[3];
+
+	return r1 != r2 ? r1 < r2 : g1 != g2 ? g1 < g2 : b1 != b2 ? b1 < b2 : a1 < a1;
+}
+
+bool operator==(Couleur const &a, Couleur const& b) {
+	float* c1 = a.Get();
+
+	float r1 = c1[0];
+	float g1 = c1[1];
+	float b1 = c1[2];
+	float a1 = c1[3];
+	float* c2 = b.Get();
+	float r2 = c2[0];
+	float g2 = c2[1];
+	float b2 = c2[2];
+	float a2 = c2[3];
+
+	return (r1 == r2 && g1 == g2 && b1 == b2 && a1 == a2);
+};

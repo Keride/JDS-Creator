@@ -114,26 +114,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="ActionMonopoly.h" />
+    <ClInclude Include="Bouton.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Couleur.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameMonopoly.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="LoadFile.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Objet.h" />
     <ClInclude Include="opengl_3.h" />
+    <ClInclude Include="Ressource.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="Zone.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="ActionMonopoly.cpp" />
+    <ClCompile Include="Bouton.cpp" />
     <ClCompile Include="Couleur.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameMonopoly.cpp" />
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="LoadFile.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Objet.cpp" />
     <ClCompile Include="opengl_3.cpp" />
+    <ClCompile Include="Ressource.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="Zone.cpp" />

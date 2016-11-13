@@ -7,6 +7,7 @@
 #include "Shader.h"
 #include "opengl_3.h"
 #include "Game.h"
+#include "GameMonopoly.h"
 
 class OpenGLContext;
 
@@ -21,10 +22,12 @@ public:
 	void InitScene(OpenGLContext& gl);
 	void RenderScene(OpenGLContext& gl, Camera& camera, int windowHeight, int windowWidth);
 	void drawColorScene(OpenGLContext& gl);
+	void drawColorUI(OpenGLContext& gl);
 	void drawScene3d(OpenGLContext& gl);
 	void getSelection();
 	void drawPlateau();
 	void drawJoueurs();
+	void drawUI(OpenGLContext& gl);
 
 	int xMousePick;
 	int yMousePick;
@@ -51,6 +54,9 @@ private:
 
 	unsigned int vaoRect;
 	unsigned int vboRect;
+
+	unsigned int vaoRectTextured;
+	unsigned int vboRectTextured[2];
 
 	unsigned int vaoRect3d;
 	unsigned int vboRect3d;

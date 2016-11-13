@@ -1,18 +1,28 @@
 #pragma once
 #include <vector>
+#include <map>
 #include <glm/glm.hpp>
 #include "Couleur.h"
 
 
 class Zone {
+	static std::map<Couleur, Zone*> zones;
 public:
 	Zone() {};
-	Zone(int index, std::vector<glm::vec3> position);
-	Zone(int index, glm::vec3 v1, glm::vec3 v2, glm::vec3 v3, glm::vec3 v4); 
+	Zone(std::vector<glm::vec3> position);
+	Zone(glm::vec3 v1, glm::vec3 v2, glm::vec3 v3, glm::vec3 v4); 
 	float* getColor() const; 
+
 	glm::vec3 getTranslation() const;
 	glm::vec3 getScale() const;
 	glm::vec3 getCenter() const;
+
+	virtual void onClick() {
+		int a = 0;
+	}
+
+	static Zone* getZone(Couleur couleur);
+	static Zone* getZone(int r, int g, int b, int a);
 
 private:
 	std::vector<glm::vec3> position;
