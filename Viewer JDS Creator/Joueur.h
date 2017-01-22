@@ -4,11 +4,9 @@
 
 class Joueur {
 public:
-	Joueur(Zone* pzoneDepart);
-	glm::vec3 getTranslation() const;
+	Joueur();
 	Ressource& getRessource(int iRessource);
 
 private: 
-	Zone* plocation;
-	Ressource* ressources;
+	Ressource* ressources; 
 };

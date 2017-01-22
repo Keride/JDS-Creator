@@ -6,6 +6,7 @@ class Ressource{
 public:
 	Ressource();
 	int Add(int value);
+	int getValue() const;
 
 	static void addRessource(std::string name);
 	static int getnbRessource();

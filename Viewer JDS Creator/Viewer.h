@@ -20,14 +20,14 @@ public:
 	void SetGame(Game* pGame);
 	void setFrame(int nbframes);
 	void InitScene(OpenGLContext& gl);
+	void drawUI(OpenGLContext & gl, Camera & camera);
+	void drawColorUI(OpenGLContext & gl, Camera & camera);
 	void RenderScene(OpenGLContext& gl, Camera& camera, int windowHeight, int windowWidth);
 	void drawColorScene(OpenGLContext& gl);
-	void drawColorUI(OpenGLContext& gl);
 	void drawScene3d(OpenGLContext& gl);
 	void getSelection();
 	void drawPlateau();
 	void drawJoueurs();
-	void drawUI(OpenGLContext& gl);
 
 	int xMousePick;
 	int yMousePick;
@@ -37,7 +37,6 @@ public:
 private:
 	Game* pGame;
 
-	Shader *shader;
 	Shader *shaderColored;
 	Shader *shaderTextured; 
 	Shader *shaderText;

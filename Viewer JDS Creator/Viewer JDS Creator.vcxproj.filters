@@ -31,6 +31,9 @@
     <Filter Include="Fichiers sources\Monopoly">
       <UniqueIdentifier>{ed471b48-02f4-49ca-8491-66d62e35c377}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{7794aedf-0dc0-4451-b8af-9302f79c4687}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -46,9 +49,6 @@
       <Filter>Fichiers d%27en-tête\Viewer</Filter>
     </ClInclude>
     <ClInclude Include="opengl_3.h">
-      <Filter>Fichiers d%27en-tête\Viewer</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
       <Filter>Fichiers d%27en-tête\Viewer</Filter>
     </ClInclude>
     <ClInclude Include="Viewer.h">
@@ -72,14 +72,20 @@
     <ClInclude Include="Action.h">
       <Filter>Fichiers d%27en-tête\Game</Filter>
     </ClInclude>
-    <ClInclude Include="ActionMonopoly.h">
-      <Filter>Fichiers d%27en-tête\Monopoly</Filter>
-    </ClInclude>
     <ClInclude Include="GameMonopoly.h">
       <Filter>Fichiers d%27en-tête\Monopoly</Filter>
     </ClInclude>
     <ClInclude Include="Bouton.h">
       <Filter>Fichiers d%27en-tête\Viewer</Filter>
+    </ClInclude>
+    <ClInclude Include="Case.h">
+      <Filter>Fichiers d%27en-tête\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="JoueurMonopoly.h">
+      <Filter>Fichiers d%27en-tête\Monopoly</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\Shader.h">
+      <Filter>Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +102,6 @@
       <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="Viewer.cpp">
-      <Filter>Fichiers sources\Viewer</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
       <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
     <ClCompile Include="opengl_3.cpp">
@@ -119,24 +122,43 @@
     <ClCompile Include="Action.cpp">
       <Filter>Fichiers sources\Game</Filter>
     </ClCompile>
-    <ClCompile Include="ActionMonopoly.cpp">
-      <Filter>Fichiers sources\Monopoly</Filter>
-    </ClCompile>
     <ClCompile Include="GameMonopoly.cpp">
       <Filter>Fichiers sources\Monopoly</Filter>
     </ClCompile>
     <ClCompile Include="Bouton.cpp">
       <Filter>Fichiers sources\Viewer</Filter>
     </ClCompile>
+    <ClCompile Include="Case.cpp">
+      <Filter>Fichiers sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="JoueurMonopoly.cpp">
+      <Filter>Fichiers sources\Monopoly</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\Shader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Fichiers sources\Viewer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.frag" />
-    <None Include="shader.vert" />
-    <None Include="shaderTextured.frag" />
-    <None Include="shaderTextured.vert" />
-    <None Include="SimpleShader.frag" />
-    <None Include="SimpleShader.vert" />
-    <None Include="TextShader.frag" />
-    <None Include="TextShader.vert" />
+    <None Include="Shader\shaderTextured.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\shaderTextured.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\SimpleShader.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\SimpleShader.vert">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\TextShader.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\TextShader.vert">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

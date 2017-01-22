@@ -10,8 +10,7 @@ public:
 	void initZones();
 	void initUIZones();
 	void initActions();
+	std::vector<Case*> getCases() const ;
 private:
-
-	ActionMonopoly initGameAction;
-	std::vector<ActionMonopoly> actions;
+	std::vector<Case*> cases;
 };

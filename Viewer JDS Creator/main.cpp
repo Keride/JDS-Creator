@@ -8,7 +8,7 @@
 OpenGLContext openglContext; // La classe de contexte
 
 bool running = true; // L'application est-elle lancée ? 
-Camera camera;
+Camera camera = Camera(glm::vec3(0.0f, 2.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(glm::vec3(0.0f, -0.1f, 0.0f)));
 Viewer v;
 HINSTANCE hInstance; // La HINSTANCE de cette application  
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM); // Méthode de rappel standard

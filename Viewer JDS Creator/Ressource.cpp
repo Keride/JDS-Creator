@@ -10,6 +10,10 @@ int Ressource::Add(int value)
 	return this->value;
 }
 
+int Ressource::getValue() const {
+	return this->value;
+}
+
 std::vector<std::string> Ressource::RessourceName;
 std::vector<int> Ressource::RessourceTexture;
 

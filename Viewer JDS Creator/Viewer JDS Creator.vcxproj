@@ -68,7 +68,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>./Shader;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -115,48 +117,49 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
-    <ClInclude Include="ActionMonopoly.h" />
     <ClInclude Include="Bouton.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Couleur.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameMonopoly.h" />
     <ClInclude Include="Joueur.h" />
+    <ClInclude Include="JoueurMonopoly.h" />
     <ClInclude Include="LoadFile.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Objet.h" />
     <ClInclude Include="opengl_3.h" />
+    <ClInclude Include="Case.h" />
     <ClInclude Include="Ressource.h" />
-    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Shader\Shader.h" />
     <ClInclude Include="Viewer.h" />
     <ClInclude Include="Zone.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Action.cpp" />
-    <ClCompile Include="ActionMonopoly.cpp" />
     <ClCompile Include="Bouton.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Couleur.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMonopoly.cpp" />
     <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="JoueurMonopoly.cpp" />
     <ClCompile Include="LoadFile.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Objet.cpp" />
     <ClCompile Include="opengl_3.cpp" />
+    <ClCompile Include="Case.cpp" />
     <ClCompile Include="Ressource.cpp" />
-    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Shader\Shader.cpp" />
     <ClCompile Include="Viewer.cpp" />
     <ClCompile Include="Zone.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.frag" />
-    <None Include="shader.vert" />
-    <None Include="shaderTextured.frag" />
-    <None Include="shaderTextured.vert" />
-    <None Include="SimpleShader.frag" />
-    <None Include="SimpleShader.vert" />
-    <None Include="TextShader.frag" />
-    <None Include="TextShader.vert" />
+    <None Include="Shader\shaderTextured.frag" />
+    <None Include="Shader\shaderTextured.vert" />
+    <None Include="Shader\SimpleShader.frag" />
+    <None Include="Shader\SimpleShader.vert" />
+    <None Include="Shader\TextShader.frag" />
+    <None Include="Shader\TextShader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

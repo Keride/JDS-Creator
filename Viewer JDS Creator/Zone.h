@@ -4,6 +4,7 @@
 #include <glm/glm.hpp>
 #include "Couleur.h"
 
+class Joueur;
 
 class Zone {
 	static std::map<Couleur, Zone*> zones;
@@ -17,9 +18,7 @@ public:
 	glm::vec3 getScale() const;
 	glm::vec3 getCenter() const;
 
-	virtual void onClick() {
-		int a = 0;
-	}
+	virtual void onClick(Joueur* j) {}
 
 	static Zone* getZone(Couleur couleur);
 	static Zone* getZone(int r, int g, int b, int a);

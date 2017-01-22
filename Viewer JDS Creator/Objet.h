@@ -4,7 +4,8 @@
 class Objet {
 public:
 	Objet();
-
+	Objet(Zone* pZone);
+	Zone* getZone();
 private:
-	Zone pzone;
+	Zone* pZone;
 };

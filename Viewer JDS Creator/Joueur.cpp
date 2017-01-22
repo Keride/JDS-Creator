@@ -1,13 +1,7 @@
 #include "Joueur.h"
 
-Joueur::Joueur(Zone* pzoneDepart) {
-
-	this->plocation = pzoneDepart;
+Joueur::Joueur() {
 	this->ressources = new Ressource[Ressource::getnbRessource()];
-}
-
-glm::vec3 Joueur::getTranslation() const {
-	return this->plocation->getCenter();
 }
 
 Ressource& Joueur::getRessource(int iRessource) {

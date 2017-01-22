@@ -16,3 +16,6 @@
 
 #include <ft2build.h>
 #include FT_FREETYPE_H
+
+
+#define Todo __FILE__ "(" $Line ") : Todo: "

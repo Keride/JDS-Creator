@@ -247,10 +247,10 @@ void OpenGLContext::createUniqueQuad3d(unsigned int& vao, unsigned int& vbo) {
 		1.0, 0.0, 0.0,
 		1.0, 0.0, 1.0,
 		0.0, 0.0, 1.0,
-		0.0, 1.0, 0.0,
-		1.0, 1.0, 0.0,
-		1.0, 1.0, 1.0,
-		0.0, 1.0, 1.0 };
+		0.0, -1.0, 0.0,
+		1.0, -1.0, 0.0,
+		1.0, -1.0, 1.0,
+		0.0, -1.0, 1.0 };
 
 	GLuint elements[] = {
 		0, 1, 2,    2, 3, 0,
@@ -404,8 +404,8 @@ void OpenGLContext::RenderText(Shader &shader, std::string text, GLfloat x, GLfl
 void OpenGLContext::createTexturedRectangle(unsigned int& rectangleTexturedVAO, unsigned int* rectangleTexturedVBO) {
 	float vertices[] = { -1.0, 0.0, -1.0,   1.0, 0.0, -1.0,  -1.0, 0.0, 1.0,
 						 1.0, 0.0, 1.0,		-1.0, 0.0, 1.0,  1.0, 0.0, -1.0 };
-	float UV[] = { 0.0, 1.0-0.0,   1.0, 1.0 - 0.0,  0.0, 1.0 - 1.0,
-				   1.0, 1.0 - 1.0,   0.0, 1.0 - 1.0,  1.0, 1.0 - 0.0 };
+	float UV[] = { 0.0, 1.0-1.0,   1.0, 1.0 - 1.0,  0.0, 1.0 - 0.0,
+				   1.0, 1.0 - 0.0,   0.0, 1.0 - 0.0,  1.0, 1.0 - 1.0 };
 
 	glGenVertexArrays(1, &rectangleTexturedVAO); // Créer le VAO
 	glBindVertexArray(rectangleTexturedVAO); // Lier le VAO pour l'utiliser
