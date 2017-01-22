@@ -5,47 +5,47 @@ GameMonopoly::GameMonopoly() {};
 
 void GameMonopoly::initZones() {
 	float x = 1.0f;
-	float z = 1.0f;
+	float z = -1.0f;
 	float sizeX = 0.25f;
 	float sizeZ = 0.25f;
 	//-------
-	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
+	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
 	x -= sizeX;
 	sizeX = 0.1666f;
 	for (int i = 0; i < 9; i++) {
-		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
+		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
 		x -= sizeX;
 	}
 	sizeX = 0.25f;
 	sizeZ = 0.25f;
-	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
+	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
 	//-----
-	z -= sizeZ;
+	z += sizeZ;
 	sizeZ = 0.1666f;
 	for (int i = 0; i < 9; i++) {
-		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
-		z -= sizeZ;
+		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
+		z += sizeZ;
 	}
 	sizeX = 0.25f;
 	sizeZ = 0.25f;
-	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
+	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
 	//-----
 	sizeX = 0.1666f;
 	x += sizeX;
 	for (int i = 0; i < 9; i++) {
-		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
+		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
 		x += sizeX;
 	}
 	x += 0.25f - sizeX;
 	sizeX = 0.25f;
 	sizeZ = 0.25f;
-	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
+	cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
 	//-----
 	sizeZ = 0.1666f;
-	z += sizeZ;
+	z -= sizeZ;
 	for (int i = 0; i < 9; i++) {
-		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z - sizeZ), glm::vec3(x, 0.0f, z - sizeZ))));
-		z += sizeZ;
+		cases.push_back(new Case(new Zone(glm::vec3(x, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z), glm::vec3(x - sizeX, 0.0f, z + sizeZ), glm::vec3(x, 0.0f, z + sizeZ))));
+		z -= sizeZ;
 	}
 
 	for (std::size_t i = 0; i < cases.size()-1; i++) {

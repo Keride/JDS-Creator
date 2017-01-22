@@ -176,6 +176,17 @@ void Viewer::drawColorScene(OpenGLContext& gl) {
 		glBindVertexArray(vaoRect);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
+	}	
+	const std::vector<Case*>& cases = ((GameMonopoly*)pGame)->getCases();
+	for (size_t i = 0; i < cases.size(); i++) {
+		const Zone& zone = *cases[i]->getZone();
+		glUniform4fv(ColorLocation, 1, zone.getColor());
+		glm::mat4 model = glm::translate(modelMatrix, zone.getTranslation());
+		model = glm::scale(model, zone.getScale());
+		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &model[0][0]);
+		glBindVertexArray(vaoRect);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
 	}
 	m.shaderColored->unbind();
 }
